@@ -19,10 +19,10 @@ defmodule BlacklistBackend.Impl.Backend do
 
   @spec createEntry(
           String.t(),
+          DataTypes.ListType.ListType.t(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
+          DateTime.t(),
+          DateTime.t(),
           String.t(),
           String.t()
         ) :: token
@@ -33,8 +33,26 @@ defmodule BlacklistBackend.Impl.Backend do
   def deleteEntry(entry_token) do
   end
 
-  @spec updateEntry(token) :: boolean()
-  def updateEntry(entry_token) do
+  @spec updateEntry(
+          token,
+          String.t(),
+          DataTypes.ListType.ListType.t(),
+          String.t(),
+          DateTime.t(),
+          DateTime.t(),
+          String.t(),
+          String.t()
+        ) :: boolean()
+  def updateEntry(
+        entry_token,
+        entity_name,
+        list_type,
+        list_name,
+        start_date,
+        end_date,
+        user_id,
+        reason
+      ) do
   end
 
   @spec getBlackList(String.t()) :: list(DataTypes.Api.Entry)
